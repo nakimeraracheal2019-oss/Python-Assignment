@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>CyberShield Blog</title>
+    <meta charset="UTF-8">
 
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #0a0f1c;
-            color: #e6e6e6;
+            background-color: #0a192f;
+            color: #84f5e23a;
         }
 
         header {
@@ -59,7 +61,43 @@
             padding: 15px;
             background: #020617;
             margin-top: 20px;
-            color: #888;
+            color: #888888;
+        }
+
+        .comments {
+            background: #111827;
+            padding: 20px;
+            margin: 20px 30px;
+            border-radius: 10px;
+        }
+
+        .comments h3 {
+            color: #00ffcc;
+            margin-bottom: 10px;
+        }
+
+        .comments textarea {
+            width: 100%;
+            padding: 10px;
+            background: #020617;
+            color: #e6e6e6;
+            border: 1px solid #00ccff;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        .comments button {
+            background: #00ccff;
+            color: #0a0f1c;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .comments button:hover {
+            background: #00ffcc;
         }
     </style>
 </head>
@@ -67,15 +105,17 @@
 <body>
 
 <header>
-    <h1>🔐 CyberShield Blog</h1>
+    <h1>CyberShield Blog</h1>
     <p>Exploring Cybersecurity & Digital Forensics</p>
 </header>
 
 <nav>
-    <a href="#">Home</a>
-    <a href="#">Threats</a>
-    <a href="#">Forensics</a>
-    <a href="#">Contact</a>
+    <a href="index.html"><strong>Home</strong></a>
+    <a href="cyberblog/">Blog</a>
+    <a href="attacks.html">Threats</a>
+    <a href="forensics.html">Forensics</a>
+    <a href="contact.html">Contact</a>
+    <a href="/create/">➕ Create New Post</a>
 </nav>
 
 <div class="container">
@@ -112,6 +152,14 @@
 
     </div>
 
+</div>
+
+<div class="comments">
+    <h3>💬 Comments</h3>
+    <form>
+        <textarea placeholder="Leave a comment..." rows="4" cols="50"></textarea><br>
+        <button type="submit">Submit Comment</button>
+    </form>
 </div>
 
 <footer>

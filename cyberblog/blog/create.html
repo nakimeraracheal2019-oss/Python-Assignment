@@ -1,0 +1,17 @@
+<h1>Create Cyber Security Post</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Title:</label><br>
+    <input type="text" name="title"><br><br>
+
+    <label>Body:</label><br>
+    <textarea name="body"></textarea><br><br>
+
+    <label>Category:</label><br>
+    <input type="text" name="category"><br><br>
+
+    <label>Image:</label><br>
+    <input type="file" name="image"><br><br>
+
+    <button type="submit">Save Post</button>
+</form>

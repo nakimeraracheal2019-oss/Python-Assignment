@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cyber Threats - CyberShield Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: color 0.3s;
+            padding: 5px 10px;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        nav a.active {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 3px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+            width: 100%;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .content h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        .content h3 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .content p {
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .content ul {
+            margin: 15px 0 15px 30px;
+            color: #555;
+        }
+        
+        .content li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comments-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 3px solid #667eea;
+        }
+        
+        .comments-section h2 {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+        
+        .comment {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .comment-author {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .comment-date {
+            font-size: 0.9em;
+            color: #999;
+            margin-bottom: 10px;
+        }
+        
+        .comment-content {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .no-comments {
+            text-align: center;
+            color: #999;
+            padding: 20px;
+            font-style: italic;
+        }
+        
+        .comment-form {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            border: 2px solid #667eea;
+        }
+        
+        .comment-form h3 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .comment-submit {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .comment-submit:hover {
+            background: #764ba2;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            border-top: 2px solid #667eea;
+        }
+        
+        footer p {
+            margin: 5px 0;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/blog/">Blog</a>
+            <a href="/threats/" class="active">Cyber Threats</a>
+            <a href="/forensics/">Forensics</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+        
+        <div class="container">
+            <header>
+                <h1>⚠️ Cyber Threats</h1>
+                <p>Understanding Common Cyber Attacks and How to Protect Yourself</p>
+            </header>
+            
+            <div class="content">
+                <h2>Common Cyber Threats</h2>
+                <p>In today's digital landscape, cyber threats are constantly evolving. Understanding the most common threats is essential for protecting yourself and your organization.</p>
+                
+                <img src="/media/images/phishing.jpg" alt="Phishing attack">
+                
+                <h3>🎣 Phishing</h3>
+                <p>Phishing is a cyber attack technique where attackers masquerade as trustworthy sources to obtain sensitive information from victims. Phishing attacks typically involve:</p>
+                <ul>
+                    <li>Deceptive emails that appear to come from legitimate sources</li>
+                    <li>Fake websites designed to look like real ones</li>
+                    <li>Urgent requests for personal or financial information</li>
+                    <li>Malicious links that download malware</li>
+                </ul>
+                
+                <h3>💻 Malware</h3>
+                <p>Malware is malicious software designed to harm or exploit your computer system. Common types include viruses, worms, trojans, ransomware, spyware, and adware. Malware can steal data, destroy files, or hold your system hostage for ransom.</p>
+                
+                <h3>🤝 Social Engineering</h3>
+                <p>Social engineering exploits human psychology to trick people into divulging confidential information. Attackers may use pretexting, baiting, or tailgating to gain unauthorized access to systems or information.</p>
+                
+                <h3>🔐 Ransomware</h3>
+                <p>Ransomware is malware that encrypts your files and demands payment for decryption. It can spread rapidly through networks and cause significant damage to organizations.</p>
+                
+                <h3>🛡️ How to Protect Yourself</h3>
+                <ul>
+                    <li>Never click on suspicious links or attachments</li>
+                    <li>Verify sender email addresses carefully</li>
+                    <li>Use strong, unique passwords</li>
+                    <li>Enable two-factor authentication</li>
+                    <li>Keep software and operating systems updated</li>
+                    <li>Use reputable antivirus and anti-malware software</li>
+                    <li>Be cautious when sharing personal information</li>
+                    <li>Educate yourself about common attack tactics</li>
+                </ul>
+                
+                <div class="comments-section">
+                    <h2>💬 Comments ({{ comments.count }})</h2>
+                    {% if comments %}
+                        {% for comment in comments %}
+                        <div class="comment">
+                            <div class="comment-author">{{ comment.author }}</div>
+                            <div class="comment-date">{{ comment.pub_date|date:"F j, Y \a\t H:i" }}</div>
+                            <div class="comment-content">{{ comment.content }}</div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                    <div class="no-comments">
+                        <p>No comments yet. Be the first to comment!</p>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="comment-form">
+                        <h3>Leave a Comment</h3>
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="author">Name:</label>
+                                <input type="text" id="author" name="author" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="Your email (optional)">
+                            </div>
+                            <div class="form-group">
+                                <label for="content">Comment:</label>
+                                <textarea id="content" name="content" placeholder="Leave your comment here..." required></textarea>
+                            </div>
+                            <button type="submit" class="comment-submit">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2026 CyberShield Blog | Cybersecurity & Forensics Insights</p>
+            <p>Created by Recheal | All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+</html>
